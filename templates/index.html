@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="{% url 'home' %}" method="get">
+        <input name="tag" type="text">
+        <input type="checkbox" name="tg_op1" value="1">По тегу<Br>
+        <button type="submit">Ввод</button>
+    </form>
+                {% for page in webpage_list %}
+        <li>
+          {{ page.visited }}, {{ page.tag }}, {{ page.url }}, {{ page.domain }}, {{ page.time_to_load }}, {{ page.load_code }}, {{ page.size }}
+        </li>
+      {% endfor %}
+</body>
+</html>

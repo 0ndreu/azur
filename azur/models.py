@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class WebPage (models.Model):
+class WebPage(models.Model):
     visited = models.DateTimeField()
     tag = models.CharField(max_length=128)
     url = models.TextField()

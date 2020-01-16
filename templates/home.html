@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% load bootstrap %}
+<div class="container">
+    <form method="get">
+        {{ filter.form|bootstrap }}
+    <button type="submit">Search</button>
+            <ul>
+          {% for page in filter.qs %}
+            <li>
+              {{ page.visited }}, {{ page.tag }}, {{ page.url }}, {{ page.domain }}, {{ page.time_to_load }}, {{ page.load_code }}, {{ page.size }}
+            </li>
+          {% endfor %}
+        </ul>
+</div>
+
+</body>
+</html>
