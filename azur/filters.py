@@ -7,7 +7,7 @@ class PageFilter(django_filters.FilterSet):
     class Meta:
         model = WebPage
         fields = {
-            'visited': ['gt', 'lt'],
+            'visited': ['lt', 'gt'],
             'tag': ['icontains'],
             'domain': ['exact'],
             'size': ['lte'],

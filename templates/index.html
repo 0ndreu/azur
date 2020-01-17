@@ -5,15 +5,19 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="{% url 'home' %}" method="get">
-        <input name="tag" type="text">
-        <input type="checkbox" name="tg_op1" value="1">По тегу<Br>
-        <button type="submit">Ввод</button>
+    <form action="{% url 'home2' %}" method="get">
+        <input name="tag" type="text" placeholder="tag"> <input type="checkbox" name="ch_tag" value="t"><br>
+        <input name="domain" type="text" placeholder="domain"> <input type="checkbox" name="ch_dom" value="t"><br>
+        <input name="load_code" type="text" placeholder="load code"> <input type="checkbox" name="ch_lc" value="t"><br>
+        <input name="size" type="text" placeholder="size"><br>
+        <button type="submit">Send</button>
     </form>
-                {% for page in webpage_list %}
+    <ul>
+      {% for page in webpage_list %}
         <li>
           {{ page.visited }}, {{ page.tag }}, {{ page.url }}, {{ page.domain }}, {{ page.time_to_load }}, {{ page.load_code }}, {{ page.size }}
         </li>
       {% endfor %}
+    </ul>
 </body>
 </html>
